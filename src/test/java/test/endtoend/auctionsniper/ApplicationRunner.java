@@ -28,7 +28,7 @@ public class ApplicationRunner {
     }
     
     public void showsSniperHasLostAuction() {
-        driver.showsSniperStatus(Main.STATUS_LOST);
+        driver.showsSniperStatus(Main.MainWindow.STATUS_LOST);
     }
     
     public void stop() {
