@@ -82,4 +82,20 @@ public class WordCheckerTest {
 
         assertEquals(UNKNOWN, wordChecker.check());
     }
+
+    @Test
+    public void q_with_jaum_moum_unknown_word() {
+        final WordChecker wordChecker = new WordChecker("?12");
+
+        assertEquals(UNKNOWN, wordChecker.check());
+    }
+
+
+    @Test
+    public void jaum_moum_q_with_jaum_moum_unknown_word() {
+        final WordChecker wordChecker = new WordChecker("12?12");
+
+        assertEquals(WRONG, wordChecker.check());
+    }
+
 }

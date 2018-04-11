@@ -17,7 +17,7 @@ public class WordChecker {
             return RIGHT;
         }
 
-        String currentStatus = RIGHT;
+        String currentStatus = word.charAt(0) == '?' ? UNKNOWN : RIGHT;
 
         for (int i = 1; i < word.length(); i++) {
             char prev = word.charAt(i - 1);
@@ -29,21 +29,15 @@ public class WordChecker {
 
             if (i + 1 == word.length()) return UNKNOWN;
 
-            if (prev == word.charAt(i + 1)) currentStatus = UNKNOWN;
+            char next = word.charAt(i + 1);
+
+            if (prev == next)  {
+                currentStatus = UNKNOWN;
+            } else {
+                return WRONG;
+            }
         }
 
         return currentStatus;
-
-//        if (word.equals("12")) {
-//            return RIGHT;
-//        }
-//        if (word.equals("21")) {
-//            return RIGHT;
-//        }
-//        if (word.equals("1?1")) {
-//            return UNKNOWN;
-//        }
-//
-//        return WRONG;
     }
 }
